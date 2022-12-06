@@ -1,0 +1,38 @@
+<div mat-dialog-content class="example-container">
+  <form [formGroup]="formAlumno">
+    <div class="row">
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput  formControlName="nombre" placeholder="Ingrese un nombre*" [(ngModel)]="local_data.nombre" type="text">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="fill">
+        <mat-label>Apellido</mat-label>
+        <input matInput  formControlName="apellido" placeholder="Ingrese su apellio*" [(ngModel)]="local_data.apellido" type="text">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="fill">
+        <mat-label>Edad</mat-label>
+        <input matInput  formControlName="edad" placeholder="Ingrese un edad" [(ngModel)]="local_data.edad" type="number">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="fill">
+        <mat-label>Teléfono</mat-label>
+        <input matInput  formControlName="telefono" placeholder="Ingrese su telefono*" [(ngModel)]="local_data.telefono" type="number">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput  formControlName="email" placeholder="Ingrese su email*" [(ngModel)]="local_data.email">
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-flat-button color="warn" mat-dialog-close (click)="closeDialog()">Cancelar</button>
+  <button mat-raised-button color="primary"  [disabled]="formAlumno.invalid" (click)="doAction()">{{action}}</button>
+</div>

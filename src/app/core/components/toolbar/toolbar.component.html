@@ -1,0 +1,53 @@
+<!-- <ng-container *ngIf="sesion$ | async as sesion">
+    <mat-toolbar class="example-container" color="primary">
+        Courses Application
+    </mat-toolbar>
+    <mat-sidenav-container class="example-container" color="primary" *ngIf="sesion.sesionActiva">
+        <mat-sidenav mode="side" opened>
+            <h3 style="color: #fff;">Bienvenido {{ sesion.usuarioActivo?.usuario }}</h3>
+            <ul>
+                <li><a mat-button routerLink="" >Inicio</a></li>
+                <li><a mat-button routerLink="autenticacion/login">Login</a></li>
+                <li><a mat-button routerLink="alumnos/lista">Alumnos</a></li>
+                <li><a mat-button routerLink="cursos/lista">Cursos</a></li>
+                <li><a mat-button routerLink="clases/lista">Clases</a></li>
+            </ul>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div class="content ">
+              <router-outlet></router-outlet>
+            </div>
+          </mat-sidenav-content>
+    </mat-sidenav-container>
+</ng-container> -->
+<mat-toolbar class="toolbar-cont" color="primary">
+    <mat-toolbar-row >
+        <span>Courses Application</span> 
+        <span class="example-spacer"></span>
+        <ng-container *ngIf="sesion$ | async as sesion">
+            <div *ngIf="sesion.sesionActiva">
+                <button mat-raised-button color="primary" (click)="logOut()">Salir</button>
+            </div>
+        </ng-container>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<ng-container *ngIf="sesion$ | async as sesion">
+    <mat-sidenav-container class="example-container" color="primary" >
+        <mat-sidenav mode="side" opened *ngIf="sesion.sesionActiva">
+            <!-- <h3 style="color: #fff;">Bienvenido {{ sesion.usuarioActivo?.id }}</h3> -->
+            <ul>
+                <li><a mat-button routerLink="" >Inicio</a></li>
+                <li *ngIf="!sesion.sesionActiva"><a mat-button routerLink="autenticacion/login">Login</a></li>
+                <li><a mat-button routerLink="alumnos/lista">Alumnos</a></li>
+                <li><a mat-button routerLink="cursos/lista">Cursos</a></li>
+                <li><a mat-button routerLink="clases/lista">Clases</a></li>
+            </ul>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div class="content">
+              <router-outlet></router-outlet>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</ng-container>
