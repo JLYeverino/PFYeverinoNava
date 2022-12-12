@@ -8,6 +8,8 @@ import { MaterialModule } from '../material.module';
 import { CursoService } from './services/curso.service';
 import {SharedModule} from '../shared/shared.module'
 import { ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { cursosFeatureKey, reducer } from './state/cursos.reducer';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CursosRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    StoreModule.forFeature(cursosFeatureKey, reducer)
   ],
   providers:[
     CursoService

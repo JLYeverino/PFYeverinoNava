@@ -9,6 +9,10 @@ import { AlumnosModule } from './alumnos/alumnos.module';
 import { CoreModule } from './core/core.module';
 import { ToolbarComponent } from './core/components/toolbar/toolbar.component';
 import {SharedModule} from './shared/shared.module';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,10 @@ import {SharedModule} from './shared/shared.module';
     CoreModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    StoreModule.forRoot({}, {}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]

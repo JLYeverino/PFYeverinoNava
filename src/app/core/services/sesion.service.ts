@@ -21,26 +21,6 @@ export class SesionService {
     this.sesionSubject = new BehaviorSubject(sesion);
   }
 
-  // login(usuario: Usuario){
-  //   const sesion: Sesion = {
-  //     sesionActiva: true,
-  //     usuarioActivo: usuario
-  //   }
-
-  //   this.sesionSubject.next(sesion);
-  // }
-  
-  // login(usuario: Usuario) {
-  //   this.http.get<Usuario[]>(`${environment.api}/usuarios`).pipe(
-  //     map((usuarios: Usuario[]) => {
-  //       const sesion: Sesion = {
-  //         sesionActiva: true,
-  //         usuarioActivo: usuarios.find((u: Usuario) => u.usuario === usuario.usuario && u.contrasena===usuario.contrasena)
-  //       }
-  //       console.log(usuarios.find((u: Usuario) => u.usuario === usuario.usuario && u.contrasena===usuario.contrasena))
-  //       //this.sesionSubject.next(sesion);
-  //     }));
-  // }
   login(user: Usuario){
     this.http.get<Usuario[]>(`${environment.api}/usuarios`).pipe(
       map((usuarios: Usuario[]) => 
@@ -56,6 +36,14 @@ export class SesionService {
         }
       })
   }
+
+  // login(usuario: Usuario): Observable<Usuario>{
+  //   return this.http.get<Usuario[]>(`${environment.api}/usuarios`).pipe(
+  //     map((usuarios: Usuario[]) => {
+  //       return usuarios.filter((u: Usuario) => u.usuario === usuario.usuario && u.contrasena===usuario.contrasena)[0]
+  //     }));
+  // }
+
   logOut() {
     const sesion: Sesion = {
       sesionActiva: false

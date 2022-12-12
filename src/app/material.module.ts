@@ -11,6 +11,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatTableModule } from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { MatSelectModule } from "@angular/material/select";
 
 @NgModule({
     imports: [
@@ -21,12 +23,13 @@ import {MatDialogModule} from '@angular/material/dialog';
         MatIconModule,
         MatFormFieldModule,
         MatInputModule,
-        
         MatNativeDateModule,
         MatTableModule,
         MatDialogModule,
         MatDatepickerModule,
         MatSlideToggleModule,
+        MatProgressSpinnerModule,
+        MatSelectModule
     ],
     exports: [
         MatToolbarModule,
@@ -36,12 +39,13 @@ import {MatDialogModule} from '@angular/material/dialog';
         MatIconModule,
         MatFormFieldModule,
         MatInputModule,
-        
         MatNativeDateModule,
         MatTableModule,
         MatDialogModule,
         MatDatepickerModule,
         MatSlideToggleModule,
+        MatProgressSpinnerModule,
+        MatSelectModule
     ]
 })
 export class MaterialModule{}

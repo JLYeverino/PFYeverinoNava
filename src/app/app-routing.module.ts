@@ -25,6 +25,11 @@ const routes: Routes = [
     loadChildren: () => import('./clases/clases.module').then((m) => m.ClasesModule),
     canActivate: [AutenticacionGuard]
   },
+  {
+    path: 'inscripciones',
+    loadChildren: () => import('./inscripciones/inscripciones.module').then((m) => m.InscripcionesModule),
+    canActivate: [AutenticacionGuard]
+  },
   { path: '', redirectTo: 'inicio', pathMatch: 'full'},
   { path: '**', component: PaginaNoEncontradaComponent }
 ];
