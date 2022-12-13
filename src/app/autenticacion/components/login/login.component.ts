@@ -21,8 +21,8 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) { 
     this.formulario = new FormGroup({
-      usuario: new FormControl('Madisyn.Huel75@gmail.com'),
-      contrasena: new FormControl('RZHZgRl5vgjyNSQ'),
+      usuario: new FormControl('Lucious48@hotmail.com'),
+      contrasena: new FormControl('bBoQKd5HRShdvWR'),
       admin: new FormControl(true)
     })
   }

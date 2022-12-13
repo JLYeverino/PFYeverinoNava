@@ -20,7 +20,7 @@
                 <li><a mat-button routerLink="alumnos/lista">Alumnos</a></li>
                 <li><a mat-button routerLink="cursos/lista">Cursos</a></li>
                 <li><a mat-button routerLink="clases/lista">Clases</a></li>
-                <li><a mat-button routerLink="inscripciones/lista">Inscripciones</a></li>
+                <li [style.display]="sesion.usuarioActivo?.admin ? 'none' : ''"><a mat-button routerLink="inscripciones/lista">Inscripciones</a></li>
             </ul>
         </mat-sidenav>
         <mat-sidenav-content>
