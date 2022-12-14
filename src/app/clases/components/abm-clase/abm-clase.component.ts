@@ -53,12 +53,10 @@ export class AbmClaseComponent implements OnInit, OnDestroy {
     dialog.afterClosed().subscribe(result => {
       
       if(result.event == 'Guardar'){
-        console.log(result.data);
         this.claseService.addRowData(result.data);
         this.getClasesInformation();
       }
       else if(result.event == 'Editar'){
-        console.log(result.data);
         this.claseService.updateRowData(result.data);
         this.getClasesInformation();
       }

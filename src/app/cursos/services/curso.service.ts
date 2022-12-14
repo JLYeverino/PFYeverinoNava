@@ -31,7 +31,7 @@ export class CursoService {
       })
     }).pipe(
       catchError(this.manejarError)
-    ).subscribe(console.log);
+    ).subscribe();
     alert("Curso añadido.");  
   }
 
@@ -46,14 +46,14 @@ export class CursoService {
     }
     this.http.put<Curso>(`${environment.api}/cursos/${curso.id}`, curso).pipe(
       catchError(this.manejarError)
-    ).subscribe(console.log);
+    ).subscribe();
     alert("Curso editado."); 
   }
 
   delete(id: number) {
     this.http.delete<Curso>(`${environment.api}/cursos/${id}`).pipe(
       catchError(this.manejarError)
-    ).subscribe(console.log);
+    ).subscribe();
     alert("Curso eliminado");
   }
   private manejarError(error: HttpErrorResponse){

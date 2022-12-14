@@ -23,7 +23,6 @@ export class ToolbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.sesion$ = this.sesionService.obtenerSesion();
-    console.log(this.sesion$);
   }
   logOut () {
     this.sesionService.logOut();

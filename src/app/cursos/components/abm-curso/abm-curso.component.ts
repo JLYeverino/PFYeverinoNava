@@ -54,12 +54,10 @@ export class AbmCursoComponent implements OnInit, OnDestroy  {
     });
     dialog.afterClosed().subscribe(result => {
       if(result.event == 'Guardar'){
-        console.log(result.data);
         this.cursoService.addRowData(result.data);
         this.getCourses();
       }
       else if(result.event == 'Editar'){
-        console.log(result.data);
         this.cursoService.updateRowData(result.data);
         this.getCourses();
       }

@@ -18,6 +18,5 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.sesion$ = this.sesionService.obtenerSesion();
-    console.log(this.sesion$);
   }
 }

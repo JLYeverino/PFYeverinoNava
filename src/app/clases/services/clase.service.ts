@@ -30,7 +30,7 @@ export class ClaseService {
       })
     }).pipe(
       catchError(this.manejarError)
-    ).subscribe(console.log);
+    ).subscribe();
     alert("Clase añadida."); 
   }
 
@@ -43,14 +43,14 @@ export class ClaseService {
     }
     this.http.put<Clase>(`${environment.api}/clases/${clase.id}`, clase).pipe(
       catchError(this.manejarError)
-    ).subscribe(console.log);
+    ).subscribe();
     alert("Clase editada.");
   }
 
   delete(id: number) {
     this.http.delete<Clase>(`${environment.api}/clases/${id}`).pipe(
       catchError(this.manejarError)
-    ).subscribe(console.log);
+    ).subscribe();
     alert("Clase eliminada.");
   }
   private manejarError(error: HttpErrorResponse){
